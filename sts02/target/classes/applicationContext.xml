@@ -14,11 +14,20 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 
+	<bean id="platformTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
 	<bean id="dept01Dao1" class="com.bit.model.Dept01DaoImpl">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	<bean id="dept01Dao2" class="com.bit.model.Dept01Dao2Impl">
 		<property name="JdbcTemplate" ref="JdbcTemplate"></property>
+	</bean>
+	
+	<bean id="empDao" class="com.bit.model.Emp01DaoImpl">
+		<property name="JdbcTemplate" ref="JdbcTemplate"></property>
+		<property name="transactionManager" ref="platformTransactionManager"></property>
 	</bean>
 
 <!-- 

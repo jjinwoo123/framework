@@ -18,7 +18,7 @@ public class Dept01Dao2Impl extends JdbcDaoSupport implements Dept01Dao {
 
 			@Override
 			public Dept01Vo mapRow(ResultSet rs, int rowNum) throws SQLException {
-				System.out.println("rowNum: " +rowNum);
+//				System.out.println("rowNum: " +rowNum);
 				return new Dept01Vo(
 						rs.getInt("deptno"),
 						rs.getString("dname"),
